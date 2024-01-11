@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "build:ui": " @powershell Remove-Item -Recurse -Force D:\\Universidad\\fullstack_open_course\\part2\\notes-alter-data-server\\build ; npm run build ; @powershell Copy-Item D:\\Universidad\\fullstack_open_course\\part2\\notes-alter-data-server\\build -Recurse D:\\Universidad\\api_course",
+    "deploy": "git push api_course master",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",    
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
